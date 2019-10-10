@@ -1,0 +1,38 @@
+<div class="container">
+<div class="row" *ngIf="currentBlog">
+
+  <div class="jumbotron col-md-12" style="text-align:center">
+  <h1 class="display-4">{{currentBlog.title}}</h1>
+  </div>
+
+  <div class="col-md-12" style="font-size:22px;text-align:center">
+  
+<p> <small class="text-muted">posted by {{currentBlog.author}} on {{currentBlog.created | date }} </small></p>
+
+<!-- below we are using ngIF,ngFor and also fist and last,also in a interpolation we are using a ternary operator -->
+<p *ngIf="currentBlog.tags.length!=undefined && currentBlog.tags.length>0">tags:<span *ngFor="let tag of currentBlog.tags;let first =first;let last=last">{{tag}}{{last ? ''  :  ','}}</span> </p>
+
+
+
+</div>
+
+<div class="col-md-12"style="text-align:center">
+  <!-- <p> {{currentBlog.bodyHtml}}  </p> -->
+  <div [innerHtml]="currentBlog.bodyHtml"></div>
+  <p>{{currentBlog.description}}</p>
+</div>
+
+<div class="col-md-5">
+  <button type="button" class="btn btn-primary">Edit</button>
+</div>
+<div class="col-md-5" [routerLink]="['/home']">
+  <button type="button" class="btn btn-success">Home</button>
+</div>
+<div class="col-md-1">
+  <button type="button" class="btn btn-danger">Delete</button>
+</div>
+
+</div>
+
+
+</div>

@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+<!-- Three cards,I will be using the buttons in the card for triggering modals -->
+<div class="container">
+	<div class="row justify-content-around">
+
+
+<div class="col-md-12" style="font-size:22px;text-align:center">
+  <br> <br> ALL BLOGS <br> <br>
+</div>
+
+<div class="row" style="text-align:center" *ngIf="allBlogs.length>0">
+<!--- iterative div starts here-->
+<div *ngFor="let blog of allBlogs" class="col-md-4">
+<!-- <div class="panel panel-default">
+<div class="panel-heading">{{blog.title | uppercase}}</div>
+<div class="panel-body">
+
+  <p>{{blog.description}} </p>
+</div>
+<div class ="panel-footer">
+  Posted on {{blog.created | date}} <br/> by {{blog.author}} <br/><br/>
+
+
+
+
+</div>
+
+
+</div> -->
+
+
+<div class="card border-primary" style="width: 18rem;">
+			
+  <div class="card-body">
+    <h5 class="card-title">{{blog.title | uppercase}}</h5>
+    <p class="card-text"><small class="text-muted">Posted on {{blog.created | date}} <br/> by {{blog.author}} <br/><br/>
+    </small></p>
+    <p class="card-text">{{blog.description}}</p>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" [routerLink]="['/blog',blog.blogId]">
+  Go to the blog
+</button>
+  </div>
+</div>
+
+
+
+
+<!--- iterative div ends here-->
+</div>
+</div>
+
+
+		 <!-- <div class="card border-primary" style="width: 18rem;">
+			<img src="https://wallpaperplay.com/walls/full/5/1/7/284289.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text"><small class="text-muted">last updated 3 mins ago</small></p>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+   
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+  Launch demo modal
+</button>
+  </div>
+</div>
+
+		
+
+
+		
+
+
+
+		
+<div class="card border-primary d-md-none d-lg-block" style="width: 18rem;">
+  <img src="https://wallpaperplay.com/walls/full/d/b/a/284292.jpg" class="card-img-top  " alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text"><small class="text-muted">last updated 3 mins ago</small></p>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+  Launch demo modal2
+</button>
+  </div>
+</div>
+			
+		
+
+
+
+
+		
+<div class="card border-primary" style="width: 18rem;">
+  <img src="https://wallpaperplay.com/walls/full/4/b/2/284299.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text"><small class="text-muted">last updated 3 mins ago</small></p>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+  Launch demo modal3
+</button>
+  </div>
+</div>  -->
+			
+		 
+	</div>
+</div>
+
+
+
+<!-- figure having a caption -->

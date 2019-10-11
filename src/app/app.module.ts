@@ -14,11 +14,14 @@ import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+//import statements for services
 import { BlogService } from './blog.service';
 import { BlogHttpService } from './blog-http.service';
+//import the below for http client to work in angular 6
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
+  //include HttpClientModule below too for http client to work
   imports:      [ BrowserModule,HttpClientModule, FormsModule ,
   //for routing actually
   RouterModule.forRoot([
@@ -33,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, BlogViewComponent, BlogCreateComponent, BlogEditComponent, AboutComponent, NotFoundComponent ],
   bootstrap:    [ AppComponent ],
+  //always see that the services are includeed in providers array
   providers: [BlogService, BlogHttpService]
 })
 export class AppModule { }

@@ -31,7 +31,7 @@ export class BlogViewComponent implements OnInit {
     //getting the blogId from the route
     let myBlogId = this._route.snapshot.paramMap.get('blogId');
     console.log(myBlogId);
-    //using blogservice to get the current blog
+    //using blogHttpservice to get the current blog
     this.currentBlog = this.blogHttpService.getBlogInformation(myBlogId).subscribe(
       data=>{
         this.currentBlog=data["data"];

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-create.component.css']
 })
 export class BlogCreateComponent implements OnInit {
+  let 
 
   constructor() { }
 

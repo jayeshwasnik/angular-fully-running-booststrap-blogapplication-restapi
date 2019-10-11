@@ -28,6 +28,24 @@ export class BlogHttpService {
     return Observable.throw(err.message);
   }
 
+  //sending data to the create api using post method.Notice the use of ',' to send the payload
+  public createBlog(blogData){
+    let myResponse = this._http.post(this.baseUrl+'/create?authToken='+ this.authToken,blogData);
+    console.log(myResponse);
+    return myResponse;
+  }
+
+  public editBlog(blogId,blogData){
+    let myResponse = this._http.put(this.baseUrl+blogId+'/edit?authToken='+ this.authToken,blogData);
+    console.log(myResponse);
+    return myResponse;
+  }
+
+  public deleteBlog(blogId){
+    let myResponse1 = this._http.get(this.baseUrl+blogId+'/delete'+'?authToken='+ this.authToken);
+   return myResponse1;
+
+  }
 
   public getBlogInformation(currentBlogId): any {
     // for (let blog of this.allBlogs) {

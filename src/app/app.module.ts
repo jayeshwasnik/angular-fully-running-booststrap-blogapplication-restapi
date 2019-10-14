@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+//for angular forms
 import { FormsModule } from '@angular/forms';
 
 //for routing module
@@ -21,7 +23,7 @@ import { BlogHttpService } from './blog-http.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  //include HttpClientModule below too for http client to work
+  //include HttpClientModule below too for http client to work,also included forms module
   imports:      [ BrowserModule,HttpClientModule, FormsModule ,
   //for routing actually
   RouterModule.forRoot([

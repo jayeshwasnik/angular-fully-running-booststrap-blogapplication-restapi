@@ -36,7 +36,10 @@ export class BlogCreateComponent implements OnInit {
     this.blogHttpService.createBlog(blogData).subscribe(
       data=>{console.log(data.message);
             //alert(data);
-            alert("Blog Posted Succesfully");},
+            alert("Blog Posted Succesfully");
+            //this is for redirecting to the the particular blog after one second;
+            setTimeout(()=>{this.router.navigate(['/blog',data.data.blogId]);},1000)
+            },
       error=>{console.log("error in creating blog");
               console.log(error.message);});
   }

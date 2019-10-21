@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //belwo we are importing the service
 import { BlogHttpService } from '../blog-http.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-create',
@@ -10,7 +11,7 @@ import { BlogHttpService } from '../blog-http.service';
 export class BlogCreateComponent implements OnInit {
   
 //we are initializing the blogHttpService in the constructor
-  constructor(private blogHttpService:BlogHttpService) { }
+  constructor(private blogHttpService:BlogHttpService,private _route: ActivatedRoute, private router: Router) { }
 
   //always intitialize the values at the beginning
 //the tow way binding can be seen here,as we give value to blogTitle it is reflected in the view component ,and if the value is changed there it will be changed here too

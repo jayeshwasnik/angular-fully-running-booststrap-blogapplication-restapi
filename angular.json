@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              //for toaster
+              
   "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []

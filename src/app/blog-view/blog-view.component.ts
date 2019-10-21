@@ -6,6 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 //for blogservice
 import { BlogHttpService } from '../blog-http.service';
 
+//for taostr
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
@@ -19,7 +22,7 @@ export class BlogViewComponent implements OnInit {
 
 
 
-  constructor(private _route: ActivatedRoute, private router: Router, public blogHttpService: BlogHttpService) {
+  constructor(private _route: ActivatedRoute, private router: Router, public blogHttpService: BlogHttpService,private toastr:ToastrService) {
 
     console.log("constructor called")
   }
@@ -42,6 +45,14 @@ export class BlogViewComponent implements OnInit {
   }
 
   //* /function to feed blog info from allBlogs to currentBlog
-
+public deleteBlog():any{
+  this.blogHttpService.deleteBlog(this.currentBlog.blogId).subscribe(
+    data=>{this.toastr.success("deleted succesfully","Success!");
+    //function to redirect to homepage after 1 second
+    setTimeout(()=>{this.router.navigate(['/home']);},1000)},
+    error=>{this.toastr.error("Error","Error");
+    console.log(error);}
+  )
+}
 
 }

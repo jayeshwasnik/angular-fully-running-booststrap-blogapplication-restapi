@@ -1,3 +1,6 @@
+
+/* below classes are angular defaults for validating form input */
+
 .ng-valid[required], .ng-valid.required{border-left:5px solid green;}
 
 .ng-invalid:not(form){

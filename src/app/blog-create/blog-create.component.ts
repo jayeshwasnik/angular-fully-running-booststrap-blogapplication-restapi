@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//belwo we are importing the service
 import { BlogHttpService } from '../blog-http.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { BlogHttpService } from '../blog-http.service';
 })
 export class BlogCreateComponent implements OnInit {
   
-
+//we are initializing the blogHttpService in the constructor
   constructor(private blogHttpService:BlogHttpService) { }
 
   //always intitialize the values at the beginning

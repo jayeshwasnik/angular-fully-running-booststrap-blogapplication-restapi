@@ -34,7 +34,8 @@ export class BlogCreateComponent implements OnInit {
     //calling the service and alos processing the response
     this.blogHttpService.createBlog(blogData).subscribe(
       data=>{console.log(data);
-            alert(data.message);},
+            alert(data);
+            alert("Blog Posted Succesfully");},
       error=>{console.log("error in creating blog");
               console.log(error.message);});
   }

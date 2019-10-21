@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 //for routing module
 import {RouterModule,Routes} from '@angular/router';
 
+//for toastr
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -23,8 +27,8 @@ import { BlogHttpService } from './blog-http.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  //include HttpClientModule below too for http client to work,also included forms module
-  imports:      [ BrowserModule,HttpClientModule, FormsModule ,
+  //include HttpClientModule below too for http client to work,also included forms module,and BrowserAnimationsModule,ToastrModule.forRoot() for toastr
+  imports:      [ BrowserModule,HttpClientModule, FormsModule ,BrowserAnimationsModule,ToastrModule.forRoot() ,
   //for routing actually
   RouterModule.forRoot([
     {path:'home',component:HomeComponent},

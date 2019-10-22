@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     {path:'create',component:BlogCreateComponent},
     //remember this blogId is just a random name ,you can name it anything.It is not actually the variable blogId in home component
     {path:'blog/:blogId',component:BlogViewComponent},
+    {path:'edit/:blogId',component:BlogEditComponent},
     {path:'**',component:NotFoundComponent}
   ])
   ],

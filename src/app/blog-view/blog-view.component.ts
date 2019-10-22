@@ -19,6 +19,7 @@ import { ToastrService } from 'ngx-toastr';
 export class BlogViewComponent implements OnInit {
   //variable to store the blog being called
   public currentBlog;
+ 
 
 
 

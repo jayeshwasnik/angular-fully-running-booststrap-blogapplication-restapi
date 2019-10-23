@@ -8,11 +8,15 @@ import { BlogHttpService } from '../blog-http.service';
 
 //for taostr
 import { ToastrService } from 'ngx-toastr';
+//importing the location module from angular/common
+import {Location} from '@angular/common';
 
+//add it to the providers array when you want to use the location
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
-  styleUrls: ['./blog-view.component.css']
+  styleUrls: ['./blog-view.component.css'],
+  providers:[Location]
 })
 
 
@@ -22,8 +26,8 @@ export class BlogViewComponent implements OnInit {
  
 
 
-
-  constructor(private _route: ActivatedRoute, private router: Router, public blogHttpService: BlogHttpService,private toastr:ToastrService) {
+  //initializing location and other varaibles in constructor
+  constructor(private _route: ActivatedRoute, private router: Router, public blogHttpService: BlogHttpService,private toastr:ToastrService,public location:Location) {
 
     console.log("constructor called")
   }
@@ -54,6 +58,12 @@ public deleteBlog():any{
     error=>{this.toastr.error("Error","Error");
     console.log(error);}
   )
+}
+
+
+//function to go back
+public goBackFunction(){
+this.location.back();
 }
 
 }

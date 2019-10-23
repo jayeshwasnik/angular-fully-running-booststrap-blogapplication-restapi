@@ -25,11 +25,13 @@
 <div class="col-md-5" [routerLink]="['/edit',currentBlog.blogId]">
   <button type="button" class="btn btn-primary">Edit</button>
 </div>
-<div class="col-md-5" [routerLink]="['/home']">
-  <button type="button" class="btn btn-success">Home</button>
-</div>
-<div class="col-md-1">
+
+<div class="col-md-5">
   <button type="button" class="btn btn-danger" (click)="deleteBlog()">Delete</button>
+</div>
+
+<div class="col-md-1" >
+  <button type="button" class="btn btn-success" (click)="goBackFunction()">Back</button>
 </div>
 
 </div>
